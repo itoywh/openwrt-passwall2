@@ -23,7 +23,12 @@
 2. **全局规则源。** 规则源是一个单一的全局设置（存储在 `@global_rules[0].enable_adblock`，而非按节点），所选列表会被下载、规整并写入 `/usr/share/passwall2/adblock.conf`。
 3. **注入 dnsmasq。** 服务启动时，规则文件会被复制进每个 dnsmasq 实例，作为其 `002-address.conf`（通过实例的 `conf-dir` 加载），从而使拦截规则对 PassWall2 处理的所有 DNS 查询立即生效。
 
-> **为何更改 / 更新规则后需要重启：** sing-box / xray 仅在进程启动时读取规则文件，因此切换广告规则源或拉取更新后的规则会触发一次服务重启以重建 DNS 配置。（这与 `dae` 等工具不同——`dae` 只需 `reload` 即可。）
+
+<img width="2526" height="1476" alt="image" src="https://github.com/user-attachments/assets/5bee528d-54d3-443a-931a-fc7ecce8fefb" />
+
+<img width="2254" height="1136" alt="image" src="https://github.com/user-attachments/assets/f1a57f67-7f32-4836-8a26-2f56c87d8c9b" />
+
+
 
 ### 内置规则源
 
